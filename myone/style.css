@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Vina+Sans&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+body{
+    background-color: black;
+}
+.main{
+    background-image: url("assests/bg.jpg");
+    height: 70vh;
+position: relative;
+/* photo centre */
+background-position: center center;
+/* responsive ke waqt bhi picture choti nahi hogi */
+background-repeat: no-repeat;
+/* responsive ke waqt picture khud beech main sukkar ke aa jaa rahi thi toh oske liye humne yeh property laga di hai joky ek kind of zoom effect bhi de raha hai, mtkb responsive ke waqt picture sukar nahi rahi hai either zoom in yaa zoom out hori hai*/
+background-size: max(1200px,100vw);
+}
+.main .box{
+    height: 70vh;
+    width: 100%;
+    opacity: 0.69;
+    background-color: black;
+    position: absolute;
+    /* cheez main ke andr ajaegi */
+    top: 0;
+}
+nav {
+    display: flex;
+max-width: 60vw;
+justify-content: space-between;
+margin: auto;
+    align-items: center; 
+    /* nav bar ka size dala hai kitna hona chahiye */
+    height: 62px;
+}
+nav img{
+    color: red;
+    width: 114px;
+    position: relative;
+    /* humain yeh background picture ke andr dikh raha tha , woh uski properties le raha tha aur opacity aur black colour toh humne z index use kerke isko bahr ooper lee aye picture ke */
+    z-index: 10;
+}
+nav button {
+    position: relative;
+    /* same reason as nav img z index used for popout  */
+    z-index: 10;
+}
+.hero{
+    font-family: 'Martel Sans', sans-serif;
+
+    /* we are using percentage height here as the hero div is inside the parent main so we want to take the whole height of the parent which is main so we are inputting the height here in percentages */
+
+    /* Now here we have to make up a grey line between our page 1 so the line was getting a bit too low so we changed the top bottom padding and made it zero and we used this calc() which is used to calculate these types of situtations , like here we metioned that we want the 100 percent of the hero but minus the 62 pixel from the height */
+    height:calc(100% - 62px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    /* using this position property so it can pop off from the background towards the top, as it was taking its properties and setting itself dull */
+    position: relative;
+    /* gap between the sentences */
+    gap: 23px;
+    padding: 0 30px;
+    
+}
+/* Now we used a very uncertain thing the ">" sign after our div (hero)'s first child as the problem we were having was that the email address and get started button was getting huge as it was also the part of the nth child so we used the > sign which means the first child's first object, the thing which is first in the first child just be applied over it, as we did it with the others too. */
+.hero> :nth-child(1){
+    /* we find the weight and size by using chrome extension what font */
+    font-weight: bolder;
+    font-size: 48px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder ;
+}
+
+.hero> :nth-child(2){
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+.hero> :nth-child(3){
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+.separation{
+    height: 7px;
+    background-color: rgb(67, 65, 65);
+    position: relative;
+    z-index: 20;
+}
+.btn{
+    
+    padding: 3px 8px;
+font-weight: 400;
+background-color: rgba(255, 252, 252, 0.323);
+color: white;
+border: qpx solid white;
+border-radius: 4px;
+cursor: pointer;
+}
+
+
+.btn-red  {
+background-color: red;
+color: white;
+/* Done by going on ispect on chrome */
+padding: 3px 24px;
+font-size: 20px;
+border-radius: 4px;
+font-weight: 400;
+}
+
+.btn-red-sm{
+    background-color: red;
+    color: white;
+    
+    }
+
+.hero-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.main input{
+    padding: 7px 101px 8px 14px;
+font-size: 20px;
+border-radius: 4px;
+/* this is how we made the background invisible */
+background-color: rgba(23, 23, 23,0.7);
+/* border around the email address box */
+border: 1px solid rgba(23, 23, 23,0.5);
+color: white;
+}
+
+/* Second section  of the page */
+.first{
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+/* We are making our website resposive  */
+@media screen and (max-width:1300px) {
+    body{
+       
+    }
+    .first{
+        flex-wrap: wrap;
+    }
+}
+.secimg{
+    position: relative;
+
+}
+.secimg img{
+width: 555px;
+position: relative;
+z-index: 10;
+}
+
+.secimg video{
+    position: absolute;
+    top: 51px;
+    right: 0;
+    width: 555px;
+}
+.first > div :nth-child(1){
+    
+    font-size: 48px;
+    font-weight: bolder;
+}
+.first > div :nth-child(2){
+    
+    font-size: 24px;
+}
+.faq h2{
+    text-align: center;
+    font-size: 48px;
+}
+
+.faq{
+    background: black;
+    color: white;
+    padding: 34px;
+    font-size: 24px;
+}
+
+/* Making the hover effect for the faq boxes */
+
+.faqbox:hover{
+    background-color: #414141;
+   color: white;
+}
+
+
+.faqbox{
+    transition: all 1s ease-out;
+display: flex;
+background-color: #2d2d2d;
+/* justify content space between ki wajah se object right per jaa rahy hain  */
+justify-content: space-between;
+padding: 24px;
+max-width: 60vw;
+margin: 34px auto;
+cursor: pointer;
+
+}
+/* Footer class */
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: white;
+    
+    
+}
+/* footer element */
+footer{
+    color: white;
+    max-width: 60vw;
+    margin: auto;
+    padding: 14px;
+}
+footer .questions{
+    padding: 34px 0;
+}
+.footer a{
+    font-size: 14px;
+    color: white;
+}
+.footer-item{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
